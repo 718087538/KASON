@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h2>Essential Links</h2>
+
 
   </div>
 </template>

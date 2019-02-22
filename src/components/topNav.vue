@@ -1,19 +1,14 @@
 <template>
     <div>
-      <ul class="layui-nav" lay-filter="">
-        <li class="layui-nav-item"><a href="">最新活动</a></li>
-        <li class="layui-nav-item layui-this"><a href="">产品</a></li>
-        <li class="layui-nav-item"><a href="">大数据</a></li>
-        <li class="layui-nav-item">
-          <a href="javascript:;">解决方案</a>
-          <dl class="layui-nav-child"> <!-- 二级菜单 -->
-            <dd><a href="">移动模块</a></dd>
-            <dd><a href="">后台模版</a></dd>
-            <dd><a href="">电商平台</a></dd>
-          </dl>
-        </li>
-        <li class="layui-nav-item"><a href="">社区</a></li>
-      </ul>
+      <div class="my-nav layui-nav">
+        <ul class="" lay-filter="">
+          <li class="layui-nav-item layui-this"><a href="">首页</a></li>
+        </ul>
+        <ul>
+          <button class="layui-btn layui-btn-radius layui-btn-normal">注册</button>
+          <button class="layui-btn layui-btn-radius">登录</button>
+        </ul>
+      </div>
     </div>
 </template>
 
@@ -31,5 +26,10 @@
 </script>
 
 <style scoped>
-
+.my-nav{
+  padding: 0 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 </style>
