@@ -2,14 +2,14 @@
     <div class="swiper">
       <div class="swiper-nav">
         <ul>
-          <li>前端开发</li>
-          <li>前端开发</li>
-          <li>前端开发</li>
-          <li>前端开发</li>
-          <li>前端开发</li>
-          <li>前端开发</li>
-          <li>前端开发</li>
-          <li>前端开发</li>
+          <li v-on:mouseover="doThis">学习网站</li>
+          <li>JavaScript</li>
+          <li>CSS3</li>
+          <li>HTML5</li>
+          <li>Vue</li>
+          <li>小程序</li>
+          <li>Node</li>
+          <li>软件和工具</li>
         </ul>
       </div>
       <div class="swiper-img layui-carousel"  id="test1">
@@ -20,6 +20,27 @@
           <div>条目4</div>
           <div>条目5</div>
         </div>
+        <div class="plug" v-show='num == 1'>
+        第1个二级菜单
+        </div>
+        <div class="plug" v-show='num == 2'>
+          第2个二级菜单
+        </div>
+        <div class="plug" v-show='num == 3'>
+          第3个二级菜单
+        </div>
+        <div class="plug" v-show='num == 4'>
+          第4个二级菜单
+        </div>
+        <div class="plug" v-show='num == 5'>
+          第5个二级菜单
+        </div>
+        <div class="plug" v-show='num == 6'>
+        第6个二级菜单
+      </div>
+        <div class="plug" v-show='num == 7'>
+          第7个二级菜单
+        </div>
 
       </div>
     </div>
@@ -28,6 +49,11 @@
 <script>
     export default {
         name: "Swiper",
+      data(){
+        return{
+          num:2
+        }
+      },
       mounted(){
         layui.use('carousel', function(){
           var carousel = layui.carousel;
@@ -40,6 +66,12 @@
             ,height:'100%'
           });
         });
+
+      },
+      methods:{
+        doThis:function () {
+          this.num=1;
+        }
       }
     }
 </script>
@@ -51,6 +83,7 @@
   height: 480px;
   display: flex;
   border-radius: 10px;
+  position: relative;
   background-color: deeppink;
 }
   .swiper ul li{
@@ -64,5 +97,13 @@
   }
   .swiper-img{
     flex: 1;
+  }
+  /*悬停显示的内容*/
+  .plug{
+    width: 800px;
+    height: 400px;
+    position: absolute;
+    top: 0;
+    background-color: #00FF00;
   }
 </style>
