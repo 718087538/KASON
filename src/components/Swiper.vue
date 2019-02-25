@@ -1,9 +1,15 @@
 <template>
-    <div class="swiper" v-on:mouseleave="removeActive">
-      <div class="swiper-nav">
+    <div class="swiper">
+      <div class="swiper-nav" style="position:relative" v-on:mouseleave="removeActive">
         <ul v-on:mouseover="addActive">
           <li v-for="(item,index) in menuList" :data-id='index'>{{item}}</li>
         </ul>
+        <div class="plug" v-show='num == 0'>
+          第1个二级菜单
+        </div>
+        <div class="plug" v-show='num == 1'>
+          第2个二级菜单
+        </div>
       </div>
       <div class="swiper-img layui-carousel"  id="test1">
         <div  carousel-item>
@@ -13,27 +19,7 @@
           <div>条目3</div>
           <div>条目5</div>
         </div>
-        <div class="plug" v-show='num == 0'>
-          第1个二级菜单
-        </div>
-        <div class="plug" v-show='num == 1'>
-          第2个二级菜单
-        </div>
-        <div class="plug" v-show='num == 2'>
-          第3个二级菜单
-        </div>
-        <div class="plug" v-show='num == 3'>
-          第4个二级菜单
-        </div>
-        <div class="plug" v-show='num == 4'>
-          第5个二级菜单
-        </div>
-        <div class="plug" v-show='num == 5'>
-          第6个二级菜单
-        </div>
-        <div class="plug" v-show='num == 6'>
-          第7个二级菜单
-        </div>
+
       </div>
     </div>
 </template>
@@ -44,7 +30,7 @@
       data(){
         return{
           menuList: ['学习网站','JavaScript','CSS3'],
-          num:10
+          num:10,
         }
       },
       mounted(){
@@ -101,9 +87,8 @@
     height: 400px;
     position: absolute;
     top: 0;
+    left: 180px;
+    z-index: 10;
     background-color: #00FF00;
-  }
-  .active{
-    display:inline-block;
   }
 </style>
