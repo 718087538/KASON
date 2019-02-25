@@ -10,6 +10,12 @@
         <div class="plug" v-show='num == 1'>
           第2个二级菜单
         </div>
+        <div class="plug" v-show='num == 2'>
+          第3个二级菜单
+        </div>
+        <div class="plug" v-show='num == 3'>
+          第4个二级菜单
+        </div>
       </div>
       <div class="swiper-img layui-carousel"  id="test1">
         <div  carousel-item>
@@ -29,7 +35,7 @@
         name: "Swiper",
       data(){
         return{
-          menuList: ['学习网站','JavaScript','CSS3'],
+          menuList: ['学习空间','小程序','Vue','JavaScript','CSS3','HTML5','Node','软件和工具',],
           num:10,
         }
       },
