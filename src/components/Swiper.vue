@@ -1,47 +1,39 @@
 <template>
-    <div class="swiper">
+    <div class="swiper" v-on:mouseleave="removeActive">
       <div class="swiper-nav">
-        <ul>
-          <li v-on:mouseover="doThis">学习网站</li>
-          <li>JavaScript</li>
-          <li>CSS3</li>
-          <li>HTML5</li>
-          <li>Vue</li>
-          <li>小程序</li>
-          <li>Node</li>
-          <li>软件和工具</li>
+        <ul v-on:mouseover="addActive">
+          <li v-for="(item,index) in menuList" :data-id='index'>{{item}}</li>
         </ul>
       </div>
       <div class="swiper-img layui-carousel"  id="test1">
         <div  carousel-item>
           <div>条目1</div>
           <div>条目2</div>
-          <div>条目3</div>
           <div>条目4</div>
+          <div>条目3</div>
           <div>条目5</div>
         </div>
-        <div class="plug" v-show='num == 1'>
-        第1个二级菜单
+        <div class="plug" v-show='num == 0'>
+          第1个二级菜单
         </div>
-        <div class="plug" v-show='num == 2'>
+        <div class="plug" v-show='num == 1'>
           第2个二级菜单
         </div>
-        <div class="plug" v-show='num == 3'>
+        <div class="plug" v-show='num == 2'>
           第3个二级菜单
         </div>
-        <div class="plug" v-show='num == 4'>
+        <div class="plug" v-show='num == 3'>
           第4个二级菜单
         </div>
-        <div class="plug" v-show='num == 5'>
+        <div class="plug" v-show='num == 4'>
           第5个二级菜单
         </div>
+        <div class="plug" v-show='num == 5'>
+          第6个二级菜单
+        </div>
         <div class="plug" v-show='num == 6'>
-        第6个二级菜单
-      </div>
-        <div class="plug" v-show='num == 7'>
           第7个二级菜单
         </div>
-
       </div>
     </div>
 </template>
@@ -51,7 +43,8 @@
         name: "Swiper",
       data(){
         return{
-          num:2
+          menuList: ['学习网站','JavaScript','CSS3'],
+          num:10
         }
       },
       mounted(){
@@ -69,8 +62,12 @@
 
       },
       methods:{
-        doThis:function () {
-          this.num=1;
+        addActive:function (e) {
+          // console.log(e.target.dataset.id);
+          this.num=e.target.dataset.id;
+        },
+        removeActive:function (e) {
+          this.num='10';
         }
       }
     }
@@ -105,5 +102,8 @@
     position: absolute;
     top: 0;
     background-color: #00FF00;
+  }
+  .active{
+    display:inline-block;
   }
 </style>
