@@ -5,40 +5,13 @@
         <div class="">更多>></div>
       </div>
       <div class="test-box">
-        <div class="item">
-          <h4>JS经典笔试题第1套</h4>
+        <div class="item" v-for="item in test">
+          <h4>{{item.title}}</h4>
           <img src="../assets/logo.png" alt="">
-          <h6>热度指数:223</h6>
-          <div>难度系数</div>
+          <h6>{{item.hot}}</h6>
+          <div>{{item.difficutly}}<span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></div>
         </div>
 
-        <div class="item">
-          <h4>JS经典笔试题第1套</h4>
-          <img src="../assets/logo.png" alt="">
-          <h6>热度指数:223</h6>
-          <div>难度系数</div>
-        </div>
-
-        <div class="item">
-          <h4>JS经典笔试题第1套</h4>
-          <img src="../assets/logo.png" alt="">
-          <h6>热度指数:223</h6>
-          <div>难度系数</div>
-        </div>
-
-        <div class="item">
-          <h4>JS经典笔试题第1套</h4>
-          <img src="../assets/logo.png" alt="">
-          <h6>热度指数:223</h6>
-          <div>难度系数</div>
-        </div>
-
-        <div class="item">
-          <h4>JS经典笔试题第1套</h4>
-          <img src="../assets/logo.png" alt="">
-          <h6>热度指数:223</h6>
-          <div>难度系数</div>
-        </div>
       </div>
 
 
@@ -49,7 +22,23 @@
 
 <script>
     export default {
-        name: "List"
+        name: "List",
+      data(){
+          return{
+            test:[
+              {title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:"},
+              {title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:"},
+              {title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:"},
+              {title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:"},
+              {title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:"},
+              {title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:"},
+              {title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:"},
+              {title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:"},
+              {title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:"},
+              {title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:"},
+            ]
+          }
+      }
     }
 </script>
 
@@ -90,6 +79,7 @@
   justify-content: space-between;
   margin-top: 20px;
   display: flex;
+  flex-wrap: wrap;
 }
   img{
     width: 60px;
