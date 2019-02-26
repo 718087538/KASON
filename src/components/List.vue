@@ -11,12 +11,8 @@
           <h6>{{item.hot}}</h6>
           <div>{{item.difficutly}}<span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></div>
         </div>
-
       </div>
 
-
-
-      <div style="height:300px"></div>
     </div>
 </template>
 
@@ -45,7 +41,7 @@
 <style scoped>
 .List-box{
   width: 1060px;
-  margin: 0 auto;
+  margin: 0 auto 40px;
 }
   .line1{
     display: flex;

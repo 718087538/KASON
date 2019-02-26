@@ -4,7 +4,13 @@
     <swiper></swiper>
     <classify></classify>
     <List></List>
-  <router-view/>
+    <List></List>
+    <List></List>
+    <List></List>
+    <List></List>
+    <List></List>
+    <Footer></Footer>
+    <router-view/>
   </div>
 </template>
 
@@ -13,6 +19,7 @@
   import swiper from './components/Swiper'
   import classify from "./components/classify"
   import List from  "./components/List"
+  import Footer from "./components/Footer"
 
 export default {
   name: 'App',
@@ -20,7 +27,8 @@ export default {
     topNav,
     swiper,
     classify,
-    List
+    List,
+    Footer
   }
 }
 </script>
