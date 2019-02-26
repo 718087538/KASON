@@ -2,12 +2,16 @@
     <div class=imgBox>
       <div class="imgList">
           <div v-for="item in items">
+
+            <!--为什么这里绑定src不显示？？？-->
+
             <img class="imgg" :src="item.src" alt="">
+
             <h5>{{item.title}}</h5>
             <P>{{item.info}}</P>
           </div>
       </div>
-      <img :src="srcc" alt="">
+      <!--<img src="../assets/images/Vue.png" alt="">-->
     </div>
 </template>
 
@@ -17,13 +21,12 @@
       data(){
           return{
             items:[
-              {"src":"../assets/images/Vue.png",title:"VUE题",info:"学会之后，天下无敌"},
-              {"src":"../assets/images/Vue.png",title:"VUE题",info:"学会之后，天下无敌"},
-              {"src":"../assets/images/Vue.png",title:"VUE题",info:"学会之后，天下无敌"},
-              {"src":"../assets/images/Vue.png",title:"VUE题",info:"学会之后，天下无敌"},
-              {"src":"../assets/images/Vue.png",title:"VUE题",info:"学会之后，天下无敌"},
+              {src:"../assets/images/Vue.png",title:"VUE试题",info:"天下无敌"},
+              {src:"../assets/images/Vue.png",title:"JS笔试",info:"天下无敌"},
+              {src:"../assets/images/Vue.png",title:"css笔试",info:"天下无敌"},
+              {src:"../assets/images/Vue.png",title:"node笔试",info:"天下无敌"},
+              {src:"../assets/images/Vue.png",title:"小程序",info:"天下无敌"},
             ],
-            srcc:"../assets/images/Vue.png"
           }
       }
     }
