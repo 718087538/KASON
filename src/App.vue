@@ -1,16 +1,10 @@
 <template>
   <div id="app">
   <topNav></topNav>
-    <swiper></swiper>
-    <classify></classify>
-    <List></List>
-    <List></List>
-    <List></List>
-    <List></List>
-    <List></List>
-    <List></List>
-    <Footer></Footer>
-    <router-view/>
+
+  <router-view/>
+  <router-link to="resume" class="big">测试跳转</router-link>
+  <Footer></Footer>
   </div>
 </template>
 
@@ -34,5 +28,7 @@ export default {
 </script>
 
 <style>
-
+.big{
+  font-size: 100px;
+}
 </style>

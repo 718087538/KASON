@@ -2,11 +2,24 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import router from './router'
+import VRouter from 'vue-router'
+import topNav from './components/topNav'
 
-Vue.config.productionTip = false
 
-/* eslint-disable no-new */
+
+Vue.use(VRouter)
+
+let router = new VRouter({
+	routes:[
+	{
+		path:'/',
+		component:topNav,
+	}
+	]
+})
+
+
+
 new Vue({
   el: '#app',
   router,

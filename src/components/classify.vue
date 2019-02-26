@@ -11,21 +11,23 @@
             <P>{{item.info}}</P>
           </div>
       </div>
-      <!--<img src="../assets/images/Vue.png" alt="">-->
     </div>
 </template>
 
+
+
 <script>
+  // import Vuepng from "../assets/images/Vue.png"
     export default {
         name: "classify",
       data(){
           return{
             items:[
-              {src:"../assets/images/Vue.png",title:"VUE试题",info:"天下无敌"},
-              {src:"../assets/images/Vue.png",title:"JS笔试",info:"天下无敌"},
-              {src:"../assets/images/Vue.png",title:"css笔试",info:"天下无敌"},
-              {src:"../assets/images/Vue.png",title:"node笔试",info:"天下无敌"},
-              {src:"../assets/images/Vue.png",title:"小程序",info:"天下无敌"},
+              {src:require('../assets/images/Vue.png'),title:"VUE试题",info:"天下无敌"},
+              {src:require('../assets/images/Vue.png'),title:"JS笔试",info:"天下无敌"},
+              {src:require('../assets/images/Vue.png'),title:"css笔试",info:"天下无敌"},
+              {src:require('../assets/images/Vue.png'),title:"node笔试",info:"天下无敌"},
+              {src:require('../assets/images/Vue.png'),title:"小程序",info:"天下无敌"},
             ],
           }
       }

@@ -5,7 +5,11 @@
         <img src="/static/images/logo.png" alt="" class="logo">
         <ul class="" lay-filter="">
           <li class="layui-nav-item layui-this"><a href="">首页</a></li>
-          <li class="layui-nav-item"><a href="">简述</a></li>
+          <li class="layui-nav-item">
+
+            <router-link to="resume">简述</router-link>
+
+          </li>
         </ul>
      </div>
         <ul>
@@ -17,9 +21,12 @@
 </template>
 
 <script>
-
+import resume from "../pages/resume"
     export default {
         name: "nav",
+components:{
+          resume
+},
       mounted(){
         layui.use('element', function(){
           var element = layui.element
