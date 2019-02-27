@@ -5,14 +5,14 @@
         <div class="">更多>></div>
       </div>
       <div class="test-box">
-        <div class="item" v-for="item in test" v-on:mouseover="mouseover" :data-id="item.id">
+        <div class="item" v-for="item in test" v-on:mouseover="mouseover" v-on:mouseleave="mouseout" :data-id="item.id">
           <h4>{{item.title}}</h4>
           <img src="../assets/logo.png" alt="">
           <h6>{{item.hot}}</h6>
           <div>{{item.difficutly}}<span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></div>
 
           <!--鼠标悬浮时显示-->
-          <div class="test-box begin-test-box" v-show="item.show"  v-on:mouseout="mouseout"  :data-id="item.id">
+          <div class="test-box begin-test-box" v-show="item.show">
             <div class="begin-test">开始答题</div>
           </div>
 
@@ -46,13 +46,8 @@
           // console.log(this.test[1].show);
           // console.log(this.test.show);
           // console.log(e.target.dataset.id);
-
-          let _test = this.test;
           let index=e.target.dataset.id;
-
-          _test[index].show = !_test[index].show;
-
-          this.test = _test;
+          this.test[index].show=true;
         },
         mouseout(e){
           let index=e.target.dataset.id;
