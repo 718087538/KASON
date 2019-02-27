@@ -5,14 +5,19 @@
         <div class="">更多>></div>
       </div>
       <div class="test-box">
-        <div class="item" v-for="item in test">
+        <div class="item" v-for="item in test" v-on:mouseover="mouseover" :data-id="item.id">
           <h4>{{item.title}}</h4>
           <img src="../assets/logo.png" alt="">
           <h6>{{item.hot}}</h6>
           <div>{{item.difficutly}}<span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></div>
+
+          <!--鼠标悬浮时显示-->
+          <div class="test-box begin-test-box" v-show="item.show"  v-on:mouseout="mouseout"  :data-id="item.id">
+            <div class="begin-test">开始答题</div>
+          </div>
+
         </div>
       </div>
-
     </div>
 </template>
 
@@ -22,18 +27,37 @@
       data(){
           return{
             test:[
-              {title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:"},
-              {title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:"},
-              {title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:"},
-              {title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:"},
-              {title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:"},
-              {title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:"},
-              {title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:"},
-              {title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:"},
-              {title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:"},
-              {title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:"},
-            ]
+              {id:"0",title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:",show:false},
+              {id:"1",title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:",show:false},
+              {id:"2",title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:",show:false},
+              {id:"3",title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:",show:false},
+              {id:"4",title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:",show:false},
+              {id:"5",title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:",show:false},
+              {id:"6",title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:",show:false},
+              {id:"7",title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:",show:false},
+              {id:"8",title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:",show:false},
+              {id:"9",title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:",show:false},
+            ],
           }
+      },
+      methods:{
+        mouseover:function(e){
+          // console.log(this);
+          // console.log(this.test[1].show);
+          // console.log(this.test.show);
+          // console.log(e.target.dataset.id);
+
+          let _test = this.test;
+          let index=e.target.dataset.id;
+
+          _test[index].show = !_test[index].show;
+
+          this.test = _test;
+        },
+        mouseout(e){
+          let index=e.target.dataset.id;
+          this.test[index].show=false;
+        }
       }
     }
 </script>
@@ -57,6 +81,7 @@
     background-color: #25BB9B;
   }
   .item{
+    position: relative;
     width: 188px;
     height: 260px;
     margin-right: 20px;
@@ -73,11 +98,28 @@
 }
 .test-box{
   justify-content: space-between;
-  margin-top: 20px;
+  /*margin-top: 20px;*/
   display: flex;
   flex-wrap: wrap;
 }
   img{
     width: 60px;
+  }
+
+  /*隐藏的开始答题*/
+.begin-test-box{
+  /*display: none;*/
+  background-color: rgba(255,156,124,0.5);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 0 auto;
+  font-size: 30px;
+  color: #FFF;
+}
+.begin-test{
+    margin: 48% auto auto;
+  background-color: greenyellow;
   }
 </style>
