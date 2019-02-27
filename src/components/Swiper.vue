@@ -1,5 +1,6 @@
 <template>
-    <div class="swiper">
+    <div>
+      <div class="swiper">
       <div class="swiper-nav" style="position:relative" v-on:mouseleave="removeActive">
         <ul v-on:mouseover="addActive">
           <li v-for="(item,index) in menuList" :data-id='index'>{{item}}</li>
@@ -25,12 +26,16 @@
           <div>条目3</div>
           <div>条目5</div>
         </div>
-
       </div>
+    </div>
+      <Classify></Classify>
+      <List></List>
     </div>
 </template>
 
 <script>
+  import Classify from './classify'
+  import List from './List'
     export default {
         name: "Swiper",
       data(){
@@ -38,6 +43,10 @@
           menuList: ['学习空间','小程序','Vue','JavaScript','CSS3','HTML5','Node','软件和工具',],
           num:10,
         }
+      },
+      components:{
+        Classify,
+        List
       },
       mounted(){
         layui.use('carousel', function(){

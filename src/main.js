@@ -3,7 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import VRouter from 'vue-router'
-import topNav from './components/topNav'
+import Swiper from './components/Swiper'
+import resume from  './pages/resume'
 
 
 
@@ -13,8 +14,14 @@ let router = new VRouter({
 	routes:[
 	{
 		path:'/',
-		component:topNav,
-	}
+		component:Swiper,
+	},{
+      path:'/',
+      component:resume,
+    }, {
+      path:'/resume',
+      component:resume,
+    }
 	]
 })
 

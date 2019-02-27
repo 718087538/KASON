@@ -1,15 +1,29 @@
 <template>
   <div id="app">
-  <topNav></topNav>
+    <div class="my-nav layui-nav">
+      <div class="logo-box">
+        <img src="/static/images/logo.png" alt="" class="logo">
+        <ul class="" lay-filter="">
+          <li class="layui-nav-item layui-this"><a href="">首页</a></li>
+          <li class="layui-nav-item">
+
+            <router-link to="resume">简述</router-link>
+
+          </li>
+        </ul>
+      </div>
+      <ul>
+        <button class="layui-btn layui-btn-radius layui-btn-normal">注册</button>
+        <button class="layui-btn layui-btn-radius">登录</button>
+      </ul>
+    </div>
 
   <router-view/>
-  <router-link to="resume" class="big">测试跳转</router-link>
   <Footer></Footer>
   </div>
 </template>
 
 <script>
-  import topNav from "./components/topNav"
   import swiper from './components/Swiper'
   import classify from "./components/classify"
   import List from  "./components/List"
@@ -18,17 +32,36 @@
 export default {
   name: 'App',
   components:{
-    topNav,
     swiper,
     classify,
     List,
     Footer
-  }
+  },
+  mounted(){
+    layui.use('element', function(){
+      var element = layui.element
+    })
+  },
 }
 </script>
 
 <style>
-.big{
-  font-size: 100px;
+
+.my-nav{
+  min-width: 960px;
+  padding: 0 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo{
+  width: 150px;
+  height: 46px;
+  margin-right: 4%;
+}
+.logo-box{
+  flex: 1;
+  display: flex;
+  align-items: center;
 }
 </style>
