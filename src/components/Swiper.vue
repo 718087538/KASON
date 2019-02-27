@@ -31,8 +31,6 @@
       <Classify></Classify>
       <List></List>
       <List></List>
-      <List></List>
-      <List></List>
     </div>
 </template>
 
