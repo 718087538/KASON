@@ -5,7 +5,7 @@
         <div class="">更多>></div>
       </div>
       <div class="test-box">
-        <div class="item" v-for="item in test" v-on:mouseover="mouseover" v-on:mouseleave="mouseout" :data-id="item.id">
+        <div class="item" v-for="item in test1" v-on:mouseover="mouseover" v-on:mouseleave="mouseout" :data-id="item.id">
           <h4>{{item.title}}</h4>
           <img src="../assets/logo.png" alt="">
           <h6>{{item.hot}}</h6>
@@ -26,32 +26,26 @@
         name: "List",
       data(){
           return{
-            test:[
-              {id:"0",title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:",show:false},
-              {id:"1",title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:",show:false},
-              {id:"2",title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:",show:false},
-              {id:"3",title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:",show:false},
-              {id:"4",title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:",show:false},
-              {id:"5",title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:",show:false},
-              {id:"6",title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:",show:false},
-              {id:"7",title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:",show:false},
-              {id:"8",title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:",show:false},
-              {id:"9",title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:",show:false},
-            ],
+
           }
+      },
+      props:{
+        test1:{
+          type:Array
+        }
       },
       methods:{
         mouseover:function(e){
           // console.log(this);
-          // console.log(this.test[1].show);
-          // console.log(this.test.show);
+          // console.log(this.test1[1].show);
+          // console.log(this.test1.show);
           // console.log(e.target.dataset.id);
           let index=e.target.dataset.id;
-          this.test[index].show=true;
+          this.test1[index].show=true;
         },
         mouseout(e){
           let index=e.target.dataset.id;
-          this.test[index].show=false;
+          this.test1[index].show=false;
         }
       }
     }

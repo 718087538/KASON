@@ -5,6 +5,7 @@ import App from './App'
 import VRouter from 'vue-router'
 import Swiper from './components/Swiper'
 import resume from  './pages/resume'
+import login from  './pages/login'
 
 
 
@@ -15,13 +16,19 @@ let router = new VRouter({
 	{
 		path:'/',
 		component:Swiper,
-	},{
-      path:'/',
-      component:resume,
-    }, {
-      path:'/resume',
-      component:resume,
-    }
+	},
+  {
+    path:'/',
+    component:resume,
+  },
+  {
+    path:'/resume',
+    component:resume,
+  },
+  {
+    path:'/login',
+    component:login,
+  }
 	]
 })
 

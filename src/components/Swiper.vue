@@ -20,7 +20,7 @@
       </div>
       <div class="swiper-img layui-carousel"  id="test1">
         <div  carousel-item>
-          <div>条目1</div>
+          <div><img class="slideImg" src="/static/images/ko.png" alt=""></div>
           <div>条目2</div>
           <div>条目4</div>
           <div>条目3</div>
@@ -29,7 +29,7 @@
       </div>
     </div>
       <Classify></Classify>
-      <List></List>
+      <List :test1="test1"></List>
       <List></List>
     </div>
 </template>
@@ -43,6 +43,18 @@
         return{
           menuList: ['学习空间','小程序','Vue','JavaScript','CSS3','HTML5','Node','软件和工具',],
           num:10,
+          test1:[
+            {id:"0",title:"数据来自父组件",hot:"热度指数:223",difficutly:"难度:",show:false},
+            {id:"1",title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:",show:false},
+            {id:"2",title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:",show:false},
+            {id:"3",title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:",show:false},
+            {id:"4",title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:",show:false},
+            {id:"5",title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:",show:false},
+            {id:"6",title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:",show:false},
+            {id:"7",title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:",show:false},
+            {id:"8",title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:",show:false},
+            {id:"9",title:"JS经典笔试第1套",hot:"热度指数:223",difficutly:"难度:",show:false},
+          ],
         }
       },
       components:{
@@ -106,5 +118,9 @@
     left: 180px;
     z-index: 10;
     background-color: #00FF00;
+  }
+  .slideImg{
+    width: 100%;
+    height: 100%;
   }
 </style>

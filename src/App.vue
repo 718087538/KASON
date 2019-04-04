@@ -14,7 +14,7 @@
       </div>
       <ul>
         <button class="layui-btn layui-btn-radius layui-btn-normal">注册</button>
-        <button class="layui-btn layui-btn-radius">登录</button>
+        <button class="layui-btn layui-btn-radius" @click="go">登录</button>
       </ul>
     </div>
 
@@ -42,6 +42,11 @@ export default {
       var element = layui.element
     })
   },
+  methods:{
+    go(){
+      this.$router.push('./login')
+    }
+  }
 }
 </script>
 
